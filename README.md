@@ -1,2 +1,2 @@
-# projeto-agrinho
-esse site é sobre o projeto agrinho 
+tema do meu projeto
+para o concurso agrinho
