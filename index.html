@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroTech - A Nova Era do Campo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garand:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- PALETA DE CORES E CONFIGURAÇÕES GERAIS --- */
+        :root {
+            --verde-escuro: #1b3322;
+            --verde-principal: #2d5a27;
+            --verde-folha: #4f7942;
+            --verde-claro: #f4f7f4;
+            --branco: #ffffff;
+            --texto-escuro: #2b2b2b;
+            --transicao: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--verde-claro);
+            color: var(--texto-escuro);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            color: var(--verde-escuro);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- HEADER & NAVEGAÇÃO --- */
+        header {
+            background-color: var(--branco);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--verde-principal);
+            font-weight: bold;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--texto-escuro);
+            font-weight: 400;
+            transition: var(--transicao);
+            font-size: 0.95rem;
+        }
+
+        .nav-menu a:hover {
+            color: var(--verde-principal);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            padding-top: 140px;
+            padding-bottom: 80px;
+            background: linear-gradient(135deg, #eaf2eb 0%, #d5e5d7 100%);
+            text-align: center;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--verde-principal);
+            color: var(--branco);
+            padding: 12px 35px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: var(--transicao);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--verde-escuro);
+            transform: translateY(-2px);
+        }
+
+        /* --- TECNOLOGIAS (CARDS) --- */
+        .features {
+            padding: 100px 0;
+            background-color: var(--branco);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 2px;
+            background-color: var(--verde-folha);
+            margin: 15px auto 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, min-minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--verde-claro);
+            padding: 40px 30px;
+            border-radius: 8px;
+            transition: var(--transicao);
+            border: 1px solid rgba(45, 90, 39, 0.05);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(27, 51, 34, 0.05);
+        }
+
+        .card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: var(--verde-principal);
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        /* --- CONTATO --- */
+        .contact {
+            padding: 100px 0;
+            background-color: var(--verde-claro);
+            text-align: center;
+        }
+
+        .contact-form {
+            max-width: 500px;
+            margin: 40px auto 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-form input {
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .contact-form input:focus {
+            border-color: var(--verde-principal);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--verde-escuro);
+            color: var(--verde-claro);
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        /* --- RESPONSIVIDADE --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .nav-menu { display: none; } /* Simplificado para o exemplo */
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <div class="logo-area">
+                <h2 class="logo">Agro<span>Tech</span></h2>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#tecnologias">Tecnologias</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="container hero-content">
+            <h1>A inovação moldando o futuro da agricultura sustentável</h1>
+            <p>Conectando a inteligência tecnológica à força do campo para criar colheitas mais eficientes, produtivas e integradas com o meio ambiente.</p>
+            <a href="#tecnologias" class="btn">Conhecer Soluções</a>
+        </div>
+    </section>
+
+    <section id="tecnologias" class="features">
+        <div class="container">
+            <h2 class="section-title">Inovações no Campo</h2>
+            <div class="grid">
+                
+                <div class="card">
+                    <h3>Drones & Sensores</h3>
+                    <p>Monitoramento aéreo em tempo real para análise de solo, detecção de pragas e mapeamento preciso da saúde da lavoura.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Irrigação Inteligente</h3>
+                    <p>Sistemas automatizados que calculam a quantidade exata de água necessária, evitando desperdícios através de dados climáticos.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Maquinário Autônomo</h3>
+                    <p>Tratores e colheitadeiras guiados por GPS de alta precisão, otimizando o tempo de plantio e reduzindo a compactação do solo.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="contact">
+        <div class="container">
+            <h2 class="section-title">Prepare seu campo para o amanhã</h2>
+            <p>Deixe seu e-mail para receber nossa newsletter com novidades sobre o agronegócio tecnológico.</p>
+            
+            <form class="contact-form" id="agroForm">
+                <input type="email" id="emailInput" placeholder="Seu melhor e-mail" required>
+                <button type="submit" class="btn">Inscrever-se</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 AgroTech. Cultivando tecnologia com elegância e sustentabilidade.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Interação simples de envio de formulário
+        document.getElementById('agroForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede a página de recarregar
+            
+            const email = document.getElementById('emailInput').value;
+            
+            if(email) {
+                // Efeito elegante de feedback
+                alert(`Obrigado! O e-mail ${email} foi cadastrado com sucesso.`);
+                document.getElementById('emailInput').value = ''; // Limpa o campo
+            }
+        });
+
+        // Suavização do scroll ao clicar nos links do menu
+        document.querySelectorAll('.nav-menu a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
